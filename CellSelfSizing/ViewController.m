@@ -14,11 +14,10 @@
 #import "UITableViewCell+CompressSize.h"
 #import "SecondViewController.h"
 #import "Header.h"
+#import "UITableView+CompressSize.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) IBTableViewCell *ibTableViewCellPrototype;
-@property (nonatomic, strong) TableViewCell *tableViewCellPrototype;
 @property (nonatomic, strong) NSArray *data;
 @end
 
@@ -89,18 +88,15 @@
     Comment *comment = self.data[indexPath.row];
     
 #ifdef USE_IB_CELL
-    [self.ibTableViewCellPrototype configureData:comment];
-    // Important
-    self.ibTableViewCellPrototype.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(self.ibTableViewCellPrototype.bounds));
-    return [self.ibTableViewCellPrototype fittingCompressedHeight];
+    return [tableView heightForReusableCellWithIdentifier:kIBTableViewCellIdentifier dataConfiguration:^(IBTableViewCell *cell) {
+        [cell configureData:comment];
+    }];
 #else
-    [self.tableViewCellPrototype configureData:comment];
-    // Important
-    self.tableViewCellPrototype.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(self.tableViewCellPrototype.bounds));
-    return [self.tableViewCellPrototype fittingCompressedHeight];
+    return [tableView heightForReusableCellWithIdentifier:kTableViewCellIdentifier dataConfiguration:^(TableViewCell *cell) {
+       [cell configureData:comment];
+    }];
 #endif
 }
-
 
 #pragma mark - Accessor
 
@@ -118,24 +114,8 @@
 #endif
         
     }
-    
+
     return _tableView;
-}
-
-- (IBTableViewCell *)ibTableViewCellPrototype {
-    if (!_ibTableViewCellPrototype) {
-        _ibTableViewCellPrototype = [[[UINib nibWithNibName:@"IBTableViewCell" bundle:nil] instantiateWithOwner:nil options:nil] firstObject];
-    }
-    
-    return _ibTableViewCellPrototype;
-}
-
-- (TableViewCell *)tableViewCellPrototype {
-    if (!_tableViewCellPrototype) {
-        _tableViewCellPrototype = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier];
-    }
-    
-    return _tableViewCellPrototype;
 }
 
 - (NSArray *)data {

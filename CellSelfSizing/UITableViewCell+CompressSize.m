@@ -13,7 +13,7 @@
 - (CGFloat)fittingCompressedHeight {
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1;
+    return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1.0f;
 }
 
 @end

@@ -21,6 +21,7 @@
 		4685F7CA1B047DE50080997A /* IBSecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4685F7C81B047DE50080997A /* IBSecondTableViewCell.xib */; };
 		4685F7D21B04B1640080997A /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4685F7D11B04B1640080997A /* SecondTableViewCell.m */; };
 		46AE7EF51AFFAD6400B8A11A /* UITableViewCell+CompressSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AE7EF41AFFAD6400B8A11A /* UITableViewCell+CompressSize.m */; };
+		46F5BAA01B0E238400C37BB3 /* UITableView+CompressSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F5BA9F1B0E238400C37BB3 /* UITableView+CompressSize.m */; };
 		6CD67F43FD30FDE325F9345A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 112DB62CE6771F737CFEEB33 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,8 @@
 		4685F7D11B04B1640080997A /* SecondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTableViewCell.m; sourceTree = "<group>"; };
 		46AE7EF31AFFAD6400B8A11A /* UITableViewCell+CompressSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+CompressSize.h"; sourceTree = "<group>"; };
 		46AE7EF41AFFAD6400B8A11A /* UITableViewCell+CompressSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+CompressSize.m"; sourceTree = "<group>"; };
+		46F5BA9E1B0E238400C37BB3 /* UITableView+CompressSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CompressSize.h"; sourceTree = "<group>"; };
+		46F5BA9F1B0E238400C37BB3 /* UITableView+CompressSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CompressSize.m"; sourceTree = "<group>"; };
 		4F4D8F3FF784F7E1D81A5C20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		96C10E3FCE90490775502BB8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +202,8 @@
 			children = (
 				46AE7EF31AFFAD6400B8A11A /* UITableViewCell+CompressSize.h */,
 				46AE7EF41AFFAD6400B8A11A /* UITableViewCell+CompressSize.m */,
+				46F5BA9E1B0E238400C37BB3 /* UITableView+CompressSize.h */,
+				46F5BA9F1B0E238400C37BB3 /* UITableView+CompressSize.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				4677E9991AFE4F85007EA1F5 /* TableViewCell.m in Sources */,
 				4677E9A31AFE611F007EA1F5 /* IBTableViewCell.m in Sources */,
 				4677E9771AFE4E7E007EA1F5 /* AppDelegate.m in Sources */,
+				46F5BAA01B0E238400C37BB3 /* UITableView+CompressSize.m in Sources */,
 				4685F7C51B047D360080997A /* SecondViewController.m in Sources */,
 				4677E99C1AFE501B007EA1F5 /* Comment.m in Sources */,
 				4677E9741AFE4E7E007EA1F5 /* main.m in Sources */,

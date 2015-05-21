@@ -13,19 +13,21 @@
 #import "Comment.h"
 #import "Header.h"
 #import "SecondTableViewCell.h"
+#import "UITableView+CompressSize.h"
 
 @interface SecondViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *data;
-@property (nonatomic, strong) IBSecondTableViewCell *ibPrototypeCell;
-@property (nonatomic, strong) SecondTableViewCell *prototypeCell;
-
 @end
 
 @implementation SecondViewController
 
 #pragma mark - viewDidLoad
+
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -91,18 +93,14 @@
     Comment *comment = self.data[indexPath.row];
     
 #ifdef USE_IB_CELL
-    [self.ibPrototypeCell configureData:comment];
-    [self.ibPrototypeCell setNeedsUpdateConstraints];
-    [self.ibPrototypeCell updateConstraintsIfNeeded];
-    self.ibPrototypeCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(self.ibPrototypeCell.bounds));
-    return [self.ibPrototypeCell fittingCompressedHeight];
+    return [tableView heightForReusableCellWithIdentifier:kIBSecondTableViewCellIdenitfier dataConfiguration:^(IBSecondTableViewCell *cell) {
+        [cell configureData:comment];
+    }];
 #else
-    [self.prototypeCell configureData:comment];
-    [self.prototypeCell setNeedsUpdateConstraints];
-    [self.prototypeCell updateConstraintsIfNeeded];
-    self.prototypeCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(self.prototypeCell.bounds));
-    return [self.prototypeCell fittingCompressedHeight];
-#endif    
+    return [tableView heightForReusableCellWithIdentifier:kSecondTableViewCellIdentifier dataConfiguration:^(SecondTableViewCell *cell) {
+        [cell configureData:comment];
+    }];
+#endif
 }
 
 
@@ -115,28 +113,14 @@
         _tableView.delegate = self;
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedRowHeight = 44;
+#ifdef USE_IB_CELL
         [_tableView registerNib:[UINib nibWithNibName:@"IBSecondTableViewCell" bundle:nil] forCellReuseIdentifier:kIBSecondTableViewCellIdenitfier];
+#else
         [_tableView registerClass:[SecondTableViewCell class] forCellReuseIdentifier:kSecondTableViewCellIdentifier];
+#endif
     }
     
     return _tableView;
-}
-
-- (IBSecondTableViewCell *)ibPrototypeCell {
-    if (!_ibPrototypeCell) {
-        _ibPrototypeCell = [[[UINib nibWithNibName:@"IBSecondTableViewCell" bundle:nil] instantiateWithOwner:nil options:nil] firstObject];
-    }
-    
-    return _ibPrototypeCell;
-}
-
-- (SecondTableViewCell *)prototypeCell {
-    if (!_prototypeCell) {
-        _prototypeCell = [[SecondTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSecondTableViewCellIdentifier];
-    }
-    
-    return _prototypeCell;
-    
 }
 
 - (NSArray *)data {

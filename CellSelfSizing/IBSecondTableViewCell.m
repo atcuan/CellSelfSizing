@@ -20,6 +20,10 @@ NSString * const kIBSecondTableViewCellIdenitfier = @"IBSecondTableViewCell";
 
 @implementation IBSecondTableViewCell
 
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
+}
+
 - (void)awakeFromNib {
     // Initialization code
     self.descriptionLabel.numberOfLines = 0;
