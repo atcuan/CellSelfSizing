@@ -16,6 +16,11 @@
 		4677E99C1AFE501B007EA1F5 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4677E99B1AFE501B007EA1F5 /* Comment.m */; };
 		4677E9A31AFE611F007EA1F5 /* IBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4677E9A11AFE611F007EA1F5 /* IBTableViewCell.m */; };
 		4677E9A41AFE611F007EA1F5 /* IBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4677E9A21AFE611F007EA1F5 /* IBTableViewCell.xib */; };
+		4685F7C51B047D360080997A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4685F7C41B047D360080997A /* SecondViewController.m */; };
+		4685F7C91B047DE50080997A /* IBSecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4685F7C71B047DE50080997A /* IBSecondTableViewCell.m */; };
+		4685F7CA1B047DE50080997A /* IBSecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4685F7C81B047DE50080997A /* IBSecondTableViewCell.xib */; };
+		4685F7D21B04B1640080997A /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4685F7D11B04B1640080997A /* SecondTableViewCell.m */; };
+		46AE7EF51AFFAD6400B8A11A /* UITableViewCell+CompressSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AE7EF41AFFAD6400B8A11A /* UITableViewCell+CompressSize.m */; };
 		6CD67F43FD30FDE325F9345A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 112DB62CE6771F737CFEEB33 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +54,16 @@
 		4677E9A01AFE611F007EA1F5 /* IBTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBTableViewCell.h; sourceTree = "<group>"; };
 		4677E9A11AFE611F007EA1F5 /* IBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBTableViewCell.m; sourceTree = "<group>"; };
 		4677E9A21AFE611F007EA1F5 /* IBTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBTableViewCell.xib; sourceTree = "<group>"; };
+		4685F7C31B047D360080997A /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		4685F7C41B047D360080997A /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		4685F7C61B047DE50080997A /* IBSecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSecondTableViewCell.h; sourceTree = "<group>"; };
+		4685F7C71B047DE50080997A /* IBSecondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSecondTableViewCell.m; sourceTree = "<group>"; };
+		4685F7C81B047DE50080997A /* IBSecondTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBSecondTableViewCell.xib; sourceTree = "<group>"; };
+		4685F7CB1B04B0DE0080997A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		4685F7D01B04B1640080997A /* SecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTableViewCell.h; sourceTree = "<group>"; };
+		4685F7D11B04B1640080997A /* SecondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTableViewCell.m; sourceTree = "<group>"; };
+		46AE7EF31AFFAD6400B8A11A /* UITableViewCell+CompressSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+CompressSize.h"; sourceTree = "<group>"; };
+		46AE7EF41AFFAD6400B8A11A /* UITableViewCell+CompressSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+CompressSize.m"; sourceTree = "<group>"; };
 		4F4D8F3FF784F7E1D81A5C20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		96C10E3FCE90490775502BB8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,19 +127,14 @@
 		4677E9701AFE4E7E007EA1F5 /* CellSelfSizing */ = {
 			isa = PBXGroup;
 			children = (
+				4685F7CF1B04B1410080997A /* Model */,
+				4685F7CE1B04B12F0080997A /* Helpers */,
+				4685F7CD1B04B11C0080997A /* PageTwo */,
+				4685F7CC1B04B1020080997A /* PageOne */,
 				4677E9751AFE4E7E007EA1F5 /* AppDelegate.h */,
 				4677E9761AFE4E7E007EA1F5 /* AppDelegate.m */,
-				4677E9781AFE4E7E007EA1F5 /* ViewController.h */,
-				4677E9791AFE4E7E007EA1F5 /* ViewController.m */,
+				4685F7CB1B04B0DE0080997A /* Header.h */,
 				4677E97E1AFE4E7E007EA1F5 /* Images.xcassets */,
-				4677E9711AFE4E7E007EA1F5 /* Supporting Files */,
-				4677E9971AFE4F85007EA1F5 /* TableViewCell.h */,
-				4677E9981AFE4F85007EA1F5 /* TableViewCell.m */,
-				4677E9A01AFE611F007EA1F5 /* IBTableViewCell.h */,
-				4677E9A11AFE611F007EA1F5 /* IBTableViewCell.m */,
-				4677E9A21AFE611F007EA1F5 /* IBTableViewCell.xib */,
-				4677E99A1AFE501B007EA1F5 /* Comment.h */,
-				4677E99B1AFE501B007EA1F5 /* Comment.m */,
 			);
 			path = CellSelfSizing;
 			sourceTree = "<group>";
@@ -153,6 +163,53 @@
 				4677E98C1AFE4E7E007EA1F5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4685F7CC1B04B1020080997A /* PageOne */ = {
+			isa = PBXGroup;
+			children = (
+				4677E9781AFE4E7E007EA1F5 /* ViewController.h */,
+				4677E9791AFE4E7E007EA1F5 /* ViewController.m */,
+				4677E9971AFE4F85007EA1F5 /* TableViewCell.h */,
+				4677E9981AFE4F85007EA1F5 /* TableViewCell.m */,
+				4677E9A01AFE611F007EA1F5 /* IBTableViewCell.h */,
+				4677E9A11AFE611F007EA1F5 /* IBTableViewCell.m */,
+				4677E9A21AFE611F007EA1F5 /* IBTableViewCell.xib */,
+				4677E9711AFE4E7E007EA1F5 /* Supporting Files */,
+			);
+			name = PageOne;
+			sourceTree = "<group>";
+		};
+		4685F7CD1B04B11C0080997A /* PageTwo */ = {
+			isa = PBXGroup;
+			children = (
+				4685F7C31B047D360080997A /* SecondViewController.h */,
+				4685F7C41B047D360080997A /* SecondViewController.m */,
+				4685F7C61B047DE50080997A /* IBSecondTableViewCell.h */,
+				4685F7C71B047DE50080997A /* IBSecondTableViewCell.m */,
+				4685F7C81B047DE50080997A /* IBSecondTableViewCell.xib */,
+				4685F7D01B04B1640080997A /* SecondTableViewCell.h */,
+				4685F7D11B04B1640080997A /* SecondTableViewCell.m */,
+			);
+			name = PageTwo;
+			sourceTree = "<group>";
+		};
+		4685F7CE1B04B12F0080997A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				46AE7EF31AFFAD6400B8A11A /* UITableViewCell+CompressSize.h */,
+				46AE7EF41AFFAD6400B8A11A /* UITableViewCell+CompressSize.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		4685F7CF1B04B1410080997A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4677E99A1AFE501B007EA1F5 /* Comment.h */,
+				4677E99B1AFE501B007EA1F5 /* Comment.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4677E9A41AFE611F007EA1F5 /* IBTableViewCell.xib in Resources */,
+				4685F7CA1B047DE50080997A /* IBSecondTableViewCell.xib in Resources */,
 				4677E97F1AFE4E7E007EA1F5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,12 +347,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4685F7C91B047DE50080997A /* IBSecondTableViewCell.m in Sources */,
+				4685F7D21B04B1640080997A /* SecondTableViewCell.m in Sources */,
 				4677E97A1AFE4E7E007EA1F5 /* ViewController.m in Sources */,
 				4677E9991AFE4F85007EA1F5 /* TableViewCell.m in Sources */,
 				4677E9A31AFE611F007EA1F5 /* IBTableViewCell.m in Sources */,
 				4677E9771AFE4E7E007EA1F5 /* AppDelegate.m in Sources */,
+				4685F7C51B047D360080997A /* SecondViewController.m in Sources */,
 				4677E99C1AFE501B007EA1F5 /* Comment.m in Sources */,
 				4677E9741AFE4E7E007EA1F5 /* main.m in Sources */,
+				46AE7EF51AFFAD6400B8A11A /* UITableViewCell+CompressSize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

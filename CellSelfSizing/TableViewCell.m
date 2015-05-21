@@ -76,13 +76,20 @@ NSString * const kTableViewCellIdentifier = @"TableViewCell";
 }
 
 - (void)layoutSubviews {
-    [super layoutSubviews];
+    NSLog(@"%s", __FUNCTION__);
     
+    [super layoutSubviews];
+
     [self.contentView setNeedsLayout];
     [self.contentView layoutIfNeeded];
     
     self.commentLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.commentLabel.bounds);
     self.avatarImageView.layer.cornerRadius = CGRectGetWidth(self.avatarImageView.bounds) / 2;
+}
+
+- (void)updateConstraints {
+    NSLog(@"%s", __FUNCTION__);
+    [super updateConstraints];
 }
 
 #pragma mark -

@@ -11,8 +11,9 @@
 #import "TableViewCell.h"
 #import "Comment.h"
 #import "IBTableViewCell.h"
-
-//#define USE_IB_CELL
+#import "UITableViewCell+CompressSize.h"
+#import "SecondViewController.h"
+#import "Header.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -36,8 +37,14 @@
     [self customizeDemand];
     [self addSubviews];
     [self makeConstraints];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(goForward)];
 }
 
+- (void)goForward {
+    SecondViewController *second = [SecondViewController new];
+    [self.navigationController pushViewController:second animated:YES];
+}
 
 #pragma mark - viewDidLoad
 
@@ -67,7 +74,6 @@
 #else
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellIdentifier forIndexPath:indexPath];
 #endif
-    
     [cell configureData:self.data[indexPath.row]];
     
     return cell;
@@ -84,23 +90,14 @@
     
 #ifdef USE_IB_CELL
     [self.ibTableViewCellPrototype configureData:comment];
-    [self.ibTableViewCellPrototype setNeedsLayout];
-    [self.ibTableViewCellPrototype layoutIfNeeded];
-    
-    CGSize size = [self.ibTableViewCellPrototype.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    NSLog(@"%@", NSStringFromCGSize(size));
-    return size.height + 1;
+    // Important
+    self.ibTableViewCellPrototype.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(self.ibTableViewCellPrototype.bounds));
+    return [self.ibTableViewCellPrototype fittingCompressedHeight];
 #else
     [self.tableViewCellPrototype configureData:comment];
-    
-    [self.tableViewCellPrototype setNeedsLayout];
-    [self.tableViewCellPrototype layoutIfNeeded];
-    
-    CGSize size = [self.tableViewCellPrototype.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    
-    NSLog(@"%@", NSStringFromCGSize(size));
-    
-    return size.height + 1;
+    // Important
+    self.tableViewCellPrototype.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(self.tableViewCellPrototype.bounds));
+    return [self.tableViewCellPrototype fittingCompressedHeight];
 #endif
 }
 

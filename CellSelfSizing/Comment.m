@@ -26,7 +26,6 @@
                           @"A matter of seconds to see the nature of people and spend half my life is also unclear one thing to see the nature of man, nature is not the same fate.",
                           @"Life was like a box of chocolates, you never know what you're gonna get. ",
                           @"If you are ever in trouble, don't try to be brave, just run, just run away.",
-                          @"forget that there are … place … in the world that are not made out of stone, there is something … inside … that they can not get to … that is hope",
                           @"Land is the only thing in the world worth working for, worth fighting for, worth dying for. Because it's the only thing that lasts. ",
                           @"Now I find myself in a world which for me is worse than death. A world in which there is no place for me. ",
                           @"God shall wipe away all the tears from their eyes, and there shall be no more death. Neither shall there be sorrow or dying, neither shall there be any more pain, for the former world has passed away."
