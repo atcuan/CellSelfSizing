@@ -86,10 +86,6 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
-        return UITableViewAutomaticDimension;
-    }
-    
     Comment *comment = self.data[indexPath.row];
     
 #ifdef USE_IB_CELL
